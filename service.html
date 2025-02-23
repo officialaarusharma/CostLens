@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title -->
+    <title>Our Services</title>
+
+    <!-- Internal CSS for Styling -->
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700; /* Gold on hover */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        header button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ff6a00;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        header button:hover {
+            background-color: #ffd700;
+            color: #333;
+        }
+
+        /* Services Section */
+        #services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service h2 {
+            color: #ff6a00;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding: 30px 20px;
+            background: #ff6a00;
+            color: #fff;
+        }
+
+        #contact button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #ff6a00;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #ffd700;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service {
+                width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="HomePage.html">Home</a>
+            <a href="Product.html">Products</a>
+            <a href="service.html">Services</a>
+            <a href="myaccount.html">My Account</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+        <h1>Our Services</h1>
+        <p>Providing the best solutions for your needs</p>
+        <button onclick="scrollToSection()">Explore Services</button>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <!-- Service 1 -->
+        <div class="service">
+            <h2>Product Maintenance</h2>
+            <p>Regular maintenance to ensure peak performance of your product.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service">
+            <h2>24/7 Customer Support</h2>
+            <p>Round-the-clock support for any queries or assistance.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service">
+            <h2>Customized Solutions</h2>
+            <p>Personalized services to meet your specific requirements.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions, feel free to contact us!</p>
+        <button onclick="alert('Redirecting to Contact Page')">Contact Us</button>
+    </section>
+
+    <!-- JavaScript Function -->
+    <script>
+        function scrollToSection() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

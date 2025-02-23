@@ -1,0 +1,130 @@
+/* General Styling */
+body {
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff4500, #ff7f50); /* Red-Orange Gradient */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #b22222; /* Dark Red Navbar */
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Centered Checkout Container */
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Billing Details and Order Summary */
+.billing-details,
+.order-summary {
+    flex: 1 1 45%;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.billing-details h2,
+.order-summary h2 {
+    color: #ff4500; /* Title Color */
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.billing-details label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.billing-details input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.billing-details input:focus {
+    border-color: #ff4500;
+    outline: none;
+}
+
+/* Order Summary */
+.order-summary p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+.order-summary .total {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.place-order-btn {
+    display: block;
+    background-color: #28a745; /* Green Button */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.place-order-btn:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #b22222; /* Dark Red Footer */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}

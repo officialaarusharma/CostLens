@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .product-card {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      margin: 50px auto;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .product-card button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .product-card button:hover {
+      background-color: #0056b3;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .modal-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .modal-content table th,
+    .modal-content table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    .modal-content table th {
+      background-color: #f4f4f4;
+    }
+    .close-btn {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-card" onclick="showPriceComparison()">
+    <img src="smartwatch.webp" alt="Fire-Boltt Smartwatch">
+    <h2>Fire-Boltt Smartwatch</h2>
+    <p>Price: ₹2,905</p> <!-- Converted price -->
+    <p>Discount: 30%</p>
+    <button>Compare Prices</button>
+  </div>
+
+  <div id="price-comparison-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closePriceComparison()">&times;</span>
+      <h3>Price Comparison for Fire-Boltt Smartwatch</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Website</th>
+            <th>Price (INR)</th>
+            <th>Buy Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Amazon</td>
+            <td>₹2,905</td>
+            <td><a href="https://www.amazon.in" target="_blank">Buy Now</a></td>
+          </tr>
+          <tr>
+            <td>Flipkart</td>
+            <td>₹2,950</td>
+            <td><a href="https://www.flipkart.com" target="_blank">Buy Now</a></td>
+          </tr>
+          <tr>
+            <td>JioMart</td>
+            <td>₹2,980</td>
+            <td><a href="https://www.jiomart.com" target="_blank">Buy Now</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Conversion rate
+    const conversionRate = 83;
+
+    // Prices in USD
+    const pricesInUSD = {
+      amazon: 34.99,
+      flipkart: 35.54,
+      jiomart: 35.90
+    };
+
+    // Convert prices to INR
+    const pricesInINR = {
+      amazon: (pricesInUSD.amazon * conversionRate).toFixed(2),
+      flipkart: (pricesInUSD.flipkart * conversionRate).toFixed(2),
+      jiomart: (pricesInUSD.jiomart * conversionRate).toFixed(2)
+    };
+
+    // Show modal
+    function showPriceComparison() {
+      const modal = document.getElementById("price-comparison-modal");
+      document.querySelector("table tbody").innerHTML = `
+        <tr>
+          <td>Amazon</td>
+          <td>₹${pricesInINR.amazon}</td>
+          <td><a href="https://www.amazon.in" target="_blank">Buy Now</a></td>
+        </tr>
+        <tr>
+          <td>Flipkart</td>
+          <td>₹${pricesInINR.flipkart}</td>
+          <td><a href="https://www.flipkart.com" target="_blank">Buy Now</a></td>
+        </tr>
+        <tr>
+          <td>JioMart</td>
+          <td>₹${pricesInINR.jiomart}</td>
+          <td><a href="https://www.jiomart.com" target="_blank">Buy Now</a></td>
+        </tr>
+      `;
+      modal.style.display = "flex";
+    }
+
+    // Close modal
+    function closePriceComparison() {
+      const modal = document.getElementById("price-comparison-modal");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>

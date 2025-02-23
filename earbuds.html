@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product-card {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .price-list {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .price-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .price-list th, .price-list td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <img src="earbuds.jpg" alt="Boat Airdopes 141">
+        <h2>Boat Airdopes 141</h2>
+        <button onclick="showPrices()">Check Prices</button>
+    </div>
+
+    <div class="price-list" id="priceList">
+        <h3>Price Comparison</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Website</th>
+                    <th>Price (USD)</th>
+                    <th>Price (INR)</th>
+                    <th>Buy Now</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amazon</td>
+                    <td>$21.99</td>
+                    <td id="amazonPrice"></td>
+                    <td><a href="https://www.amazon.com" target="_blank">Amazon</a></td>
+                </tr>
+                <tr>
+                    <td>Flipkart</td>
+                    <td>$22.50</td>
+                    <td id="flipkartPrice"></td>
+                    <td><a href="https://www.flipkart.com" target="_blank">Flipkart</a></td>
+                </tr>
+                <tr>
+                    <td>JioMart</td>
+                    <td>$23.00</td>
+                    <td id="jiomartPrice"></td>
+                    <td><a href="https://www.jiomart.com" target="_blank">JioMart</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showPrices() {
+            const priceList = document.getElementById('priceList');
+            const exchangeRate = 82; // Example exchange rate USD to INR
+
+            // Convert prices to INR
+            document.getElementById('amazonPrice').innerText = '₹' + (21.99 * exchangeRate).toFixed(2);
+            document.getElementById('flipkartPrice').innerText = '₹' + (22.50 * exchangeRate).toFixed(2);
+            document.getElementById('jiomartPrice').innerText = '₹' + (23.00 * exchangeRate).toFixed(2);
+
+            // Show the price list
+            priceList.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
